@@ -1,0 +1,260 @@
+/* Kanban Operations Container */
+.dp-kanban-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+/* Advanced Sprint Metrics Ribbon Bar */
+.kanban-sprint-overview {
+  background-color: var(--dp-card);
+  border: 1px solid var(--dp-border);
+  padding: 16px 24px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sprint-meta-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sprint-meta-box h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.sprint-meta-box span {
+  font-size: 0.8rem;
+  color: var(--dp-muted);
+}
+
+.sprint-counter-card {
+  display: flex;
+  gap: 24px;
+}
+
+.s-mini-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.s-mini-stat span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--dp-muted);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.s-mini-stat strong {
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+/* Custom Text utilities for the new layout colors */
+.text-purple { color: var(--dp-primary) !important; }
+.text-pink { color: var(--dp-accent) !important; }
+
+/* THE INTUITIVE GRID SYSTEM */
+.kanban-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4-Column setup layout on high resolution screens */
+  gap: 20px;
+  align-items: start;
+}
+
+.kanban-column {
+  background-color: var(--dp-card);
+  border: 1px solid var(--dp-border);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  max-height: 82vh;
+}
+
+/* Dynamic Panel header alignment */
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  padding-bottom: 12px;
+}
+
+.column-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.column-header-left h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--dp-text);
+}
+
+/* Color codes indicators update */
+.status-dot-indicator { width: 8px; height: 8px; border-radius: 50%; }
+.status-dot-indicator.todo { background-color: var(--dp-muted); }
+.status-dot-indicator.in-progress { background-color: var(--dp-primary); box-shadow: 0 0 8px var(--dp-primary); }
+.status-dot-indicator.review { background-color: var(--dp-accent); box-shadow: 0 0 8px var(--dp-accent); }
+.status-dot-indicator.done { background-color: var(--dp-success); }
+
+.task-counter-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--dp-border);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--dp-muted);
+}
+
+.tasks-drop-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  min-height: 200px;
+}
+
+/* Draggable core module style components */
+.task-draggable-card {
+  background-color: var(--dp-bg);
+  border: 1px solid var(--dp-border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: grab;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.task-draggable-card:active { cursor: grabbing; }
+.task-draggable-card:hover {
+  border-color: rgba(168, 85, 247, 0.3); /* Purple aura */
+  transform: translateY(-2px);
+  background-color: var(--dp-card-hover);
+}
+
+.task-card-tags {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.prio-badge {
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.prio-badge.prio-high { background-color: rgba(239, 68, 68, 0.1); color: var(--dp-danger); }
+.prio-badge.prio-medium { background-color: rgba(168, 85, 247, 0.1); color: var(--dp-primary); }
+.prio-badge.prio-low { background-color: rgba(113, 113, 122, 0.1); color: var(--dp-muted); }
+
+.project-id-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--dp-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.task-draggable-card h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.task-draggable-card p {
+  font-size: 0.8rem;
+  color: var(--dp-muted);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.task-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed var(--dp-border);
+  padding-top: 10px;
+}
+
+.task-due-date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--dp-muted);
+  font-weight: 600;
+}
+
+.task-assignee img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--dp-border);
+}
+
+.empty-zone-placeholder {
+  text-align: center;
+  padding: 40px 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.01);
+  border-radius: 12px;
+}
+.empty-zone-placeholder span {
+  font-size: 0.75rem;
+  color: rgba(113, 113, 122, 0.3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVE MEDIA QUERIES FOR KANBAN WORKSPACE BOARD
+   ========================================================================== */
+
+/* --- TABLETS SCREEN VERIFICATION (Max-Width: 1024px) --- */
+@media (max-width: 1024px) {
+  .kanban-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Shira amashami abiri muli row imwe */
+    gap: 16px;
+  }
+}
+
+/* --- MOBILE PHONE VERIFICATION (Max-Width: 650px) --- */
+@media (max-width: 650px) {
+  .kanban-sprint-overview {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+  
+  .sprint-counter-card {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .kanban-grid {
+    grid-template-columns: 1fr !important; /* Shira ishami rimwe rya to-do mu cyiciro kimwe directly */
+  }
+
+  .kanban-column {
+    max-height: none !important; /* Kura imipaka ngo bikururuke hasi neza */
+  }
+}

@@ -1,0 +1,155 @@
+@import url('https://googleapis.com');
+
+/* 1. PREMIUM SaaS GLOBAL COLOR PALETTE (Electric Purple & Cyber Pink) */
+:root {
+  --dp-bg: #000000;              /* Pure Obsidian Black */
+  --dp-card: #09090b;            /* Matte Dark Gray Card */
+  --dp-card-hover: #14141b;      /* Interactive Slate Violet Hover */
+  --dp-primary: #089750;         /* Deep Electric Purple */
+  --dp-primary-hover:#03da6e;   /* Darker Purple */
+  --dp-accent: #ec4899;          /* Neon Cyber Pink Accent */
+  --dp-text: #ffffff;            /* Crisp White Text */
+  --dp-muted: #71717a;           /* Zinc Muted Gray */
+  --dp-border: #27272a;          /* Sleek Structural Border */
+  --dp-success: #10b981;         /* Operational Green */
+  --dp-danger: #ef4444;          /* Critical Threat Red */
+}
+
+/* 2. CORE RESET CORE RESET SYSTEM */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--dp-bg);
+  color: var(--dp-text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Global Quick Utilities */
+.text-neon-yellow, .text-neon-cyan { color: var(--dp-primary) !important; }
+.text-success { color: var(--dp-success) !important; }
+.text-danger { color: var(--dp-danger) !important; }
+
+/* ==========================================================================
+   3. ENTERPRISE BREAKPOINTS & FULL RESPONSIVE VIEWPORTS SYSTEM
+   ========================================================================== */
+
+/* --- TABLET BREAKPOINT (Max-Width: 1024px) --- */
+@media (max-width: 1024px) {
+  /* Layout Adjustments */
+  .dp-main-content {
+    margin-left: 0 !important; /* Kura umwanya wa sidebar ku bikoresho bito */
+    width: 100%;
+  }
+
+  .dp-sidebar {
+    display: none !important; /* Zimya sidebar isanzwe, dushyira mobile nav */
+  }
+
+  /* Dashboard Splitting Re-calibration */
+  .devpulse-split-grid {
+    grid-template-columns: 1fr !important; /* Hindura rows zibe imwe irembejwe */
+    gap: 20px;
+  }
+
+  /* Kanban Grid Auto-Flow */
+  .kanban-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 16px;
+  }
+}
+
+/* --- MOBILE LANDSCAPE BREAKPOINT (Max-Width: 768px) --- */
+@media (max-width: 768px) {
+  .dp-page-container {
+    padding: 16px !important; /* Kugabanya padding ngo amakarita afate umwanya */
+  }
+
+  /* Navbar Structural Change */
+  .dp-navbar {
+    padding: 0 16px !important;
+    height: 70px !important;
+  }
+
+  .nav-right .nav-search {
+    display: none !important; /* Zimya search bar ku mobile ngo bidafata umwanya */
+  }
+
+  /* Core Matrix Ribbon */
+  .devpulse-health-ribbon {
+    gap: 12px !important;
+    padding: 10px 16px !important;
+  }
+
+  .health-node {
+    font-size: 0.75rem !important;
+  }
+
+  /* DevPulse Grid Counters */
+  .devpulse-matrix-grid {
+    grid-template-columns: 1fr 1fr !important; /* Bikore bibe bibiri muli row imwe */
+    gap: 12px !important;
+  }
+
+  .matrix-stat-card {
+    padding: 16px !important;
+  }
+
+  .matrix-stat-card h2 {
+    font-size: 1.6rem !important;
+  }
+
+  /* Table Engineering Response */
+  .epic-backlog-table th:nth-child(4),
+  .epic-backlog-table td:nth-child(4),
+  .epic-backlog-table th:nth-child(5),
+  .epic-backlog-table td:nth-child(5) {
+    display: none !important; /* Zimya priority n'abaprogrammeri b'agateganyo ku mobile */
+  }
+}
+
+/* --- SMARTPHONE PORTRAIT BREAKPOINT (Max-Width: 480px) --- */
+@media (max-width: 480px) {
+  /* Complete single stack view */
+  .devpulse-matrix-grid {
+    grid-template-columns: 1fr !important; /* Shira ikarita imwe muli row imwe */
+  }
+
+  .devpulse-health-ribbon {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cyber-project-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px !important;
+  }
+
+  .row-right-metrics {
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px dashed var(--dp-border);
+    padding-top: 12px;
+  }
+
+  .row-progress-container {
+    width: 100% !important;
+  }
+}

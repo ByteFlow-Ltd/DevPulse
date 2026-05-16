@@ -1,0 +1,302 @@
+/* Core View System Setup */
+.devpulse-dashboard-root {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background-color: var(--dp-bg);
+  color: var(--dp-text);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Microservices Core Health Ribbon */
+.devpulse-health-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  background-color: #050505;
+  border: 1px solid var(--dp-border);
+  padding: 12px 24px;
+  border-radius: 10px;
+}
+
+.health-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--dp-muted);
+}
+
+.health-node strong {
+  color: var(--dp-text);
+}
+
+.text-neon-yellow { color: var(--dp-primary) !important; }
+.text-success { color: var(--dp-success) !important; }
+.text-danger { color: var(--dp-danger) !important; }
+
+.spin-slow {
+  animation: spin 4s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Matrix Stats Grid Panels */
+.devpulse-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.matrix-stat-card {
+  background-color: var(--dp-card);
+  border: 1px solid var(--dp-border);
+  border-radius: 14px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrix-stat-card:hover {
+  transform: translateY(-2px);
+  background-color: var(--dp-card-hover);
+}
+
+.matrix-stat-card.primary-cyber:hover { border-color: var(--dp-primary); box-shadow: 0 0 15px rgba(250, 204, 21, 0.05); }
+.matrix-stat-card.secondary-cyber:hover { border-color: var(--dp-text); }
+.matrix-stat-card.stability-cyber:hover { border-color: var(--dp-success); }
+
+.m-card-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.m-lbl {
+  color: var(--dp-muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.m-ico-box {
+  color: var(--dp-primary);
+  opacity: 0.8;
+}
+
+.matrix-stat-card h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.matrix-stat-card h2 alert { color: var(--dp-danger); }
+
+.matrix-stat-card h2 small {
+  font-size: 0.85rem;
+  color: var(--dp-muted);
+  font-weight: 600;
+}
+
+.m-card-footer-bar {
+  font-size: 0.75rem;
+  color: var(--dp-muted);
+}
+
+/* Cyber Dashboard Progress Lines */
+.cyber-progress-track {
+  background-color: rgba(255, 255, 255, 0.03);
+  height: 4px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+
+.cyber-progress-fill {
+  background-color: var(--dp-primary);
+  height: 100%;
+}
+
+/* Split Command Panel Grid Layout */
+.devpulse-split-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .devpulse-split-grid { grid-template-columns: 1fr; }
+}
+
+.devpulse-panel-box {
+  background-color: var(--dp-card);
+  border: 1px solid var(--dp-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.panel-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--dp-border);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+.panel-hdr h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel-hdr h3 svg { color: var(--dp-primary); }
+
+.panel-hdr-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: rgba(255,255,255,0.02);
+  border: 1px solid var(--dp-border);
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: var(--dp-muted);
+}
+
+/* Architecture Repos Project Row Lists */
+.cyber-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cyber-project-row {
+  background-color: #030303;
+  border: 1px solid var(--dp-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cyber-project-row:hover {
+  border-color: rgba(250, 204, 21, 0.15);
+}
+
+.row-left-meta { flex: 1; min-width: 200px; }
+
+.cyber-cat-tag {
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.cyber-cat-tag.fullstack { background-color: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.cyber-cat-tag.backend { background-color: rgba(168, 85, 247, 0.1); color: #a855f7; }
+
+.row-left-meta h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+.row-left-meta p { color: var(--dp-muted); font-size: 0.85rem; line-height: 1.4; }
+
+.row-right-metrics {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.row-progress-container { width: 140px; }
+.row-progress-text {
+  display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--dp-muted); margin-bottom: 4px;
+}
+.row-progress-text strong { color: var(--dp-text); }
+.row-progress-track { background-color: rgba(255,255,255,0.03); height: 4px; border-radius: 100px; overflow: hidden; }
+.row-progress-bar { background-color: var(--dp-primary); height: 100%; }
+
+.row-task-indicator {
+  display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: var(--dp-muted);
+}
+
+.cyber-action-trigger {
+  background-color: transparent; border: 1px solid var(--dp-border); color: var(--dp-text);
+  padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer;
+  display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+}
+.cyber-action-trigger:hover { border-color: var(--dp-primary); color: var(--dp-primary); }
+
+/* Command Operations Box Center & Terminal Logs Display */
+.control-panel-body { display: flex; flex-direction: column; gap: 20px; }
+
+.cyber-command-btn {
+  background-color: var(--dp-primary); color: #000000; border: none; padding: 14px;
+  border-radius: 12px; font-weight: 800; font-size: 0.9rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.cyber-command-btn:hover { background-color: var(--dp-primary-hover); }
+
+.terminal-logs-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--dp-muted); letter-spacing: 0.5px; }
+
+.cyber-terminal-screen {
+  background-color: #030303; border: 1px solid var(--dp-border); border-radius: 12px; padding: 16px;
+  font-family: 'Courier New', Courier, monospace; min-height: 180px;
+}
+.terminal-header-dots { display: flex; gap: 6px; margin-bottom: 14px; }
+.terminal-header-dots span { width: 6px; height: 6px; border-radius: 50%; background-color: var(--dp-border); }
+
+.terminal-output-container { display: flex; flex-direction: column; gap: 8px; }
+.terminal-line { font-size: 0.8rem; display: flex; gap: 8px; }
+.terminal-arrow { color: var(--dp-primary); font-weight: 800; }
+.terminal-text { color: rgba(255, 255, 255, 0.8); }
+
+/* EPIC BACKLOG DATATABLE COMPONENT STYLE */
+.epic-backlog-table-wrapper {
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.epic-backlog-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.epic-backlog-table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--dp-muted);
+  font-weight: 800;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--dp-border);
+  letter-spacing: 0.5px;
+}
+
+.epic-backlog-table td {
+  padding: 16px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.table-badge {
+  font-size: 0.7rem; font-weight: 800; text-transform: uppercase; padding: 4px 8px; border-radius: 4px;
+}
+.table-badge.complete { background-color: rgba(34,197,94,0.1); color: var(--dp-success); }
+.table-badge.building { background-color: rgba(59,130,246,0.1); color: #3b82f6; }
+.table-badge.standby { background-color: rgba(255,255,255,0.03); color: var(--dp-muted); }
+
+.table-priority { font-size: 0.75rem; font-weight: 700; }
+.table-priority.high { color: var(--dp-danger); }
+.table-priority.medium { color: var(--dp-primary); }
+
+.engineer-avatar-dummy {
+  width: 24px; height: 24px; background-color: #1a1a1a; border: 1px solid var(--dp-border);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 700; color: var(--dp-primary);
+}
